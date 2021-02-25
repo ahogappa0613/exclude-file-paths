@@ -1,5 +1,9 @@
 {
   "name": "exclude-file-paths",
+  "publisher": "ahogappa",
+  "repository": {
+    "url": "https://github.com/ahogappa0613/exclude-file-paths"
+  },
   "displayName": "exclude file paths",
   "description": "",
   "version": "0.0.1",
@@ -10,16 +14,26 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:exclude-file-paths.helloWorld"
+    "onCommand:exclude-file-paths.invoke"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "exclude-file-paths.helloWorld",
-        "title": "Hello World"
+        "command": "exclude-file-paths.invoke",
+        "title": "Add Exclude File Paths"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "ExcludeFilePaths",
+      "description": "Set the paths you want to exclude, separated by commas (you can use the glob pattern).",
+      "properties": {
+        "excludeFilePaths.pathPattern": {
+          "type": "string",
+          "default": ""
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
