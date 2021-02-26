@@ -17,9 +17,10 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 		// const git = gitExtension.getAPI(1);
 		// Display a message box to the user
+		// vscode.window.showInformationMessage(vscode.workspace.getConfiguration('excludeFilePaths').pathPattern.join(", "));
 		vscode.commands.executeCommand("workbench.action.findInFiles", {
 			query: "",
-			filesToExclude: vscode.workspace.getConfiguration('excludeFilePaths').pathPattern,
+			filesToExclude: vscode.workspace.getConfiguration('excludeFilePaths').pathPattern.join(", "),
 		});
 	});
 

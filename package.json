@@ -26,12 +26,15 @@
     ],
     "configuration": {
       "title": "ExcludeFilePaths",
-      "description": "Set the paths you want to exclude, separated by commas (you can use the glob pattern).",
+      "description": "Set the paths you want to exclude",
       "properties": {
         "excludeFilePaths.pathPattern": {
-          "description": "Set the paths you want to exclude, separated by commas (you can use the glob pattern).",
-          "type": "string",
-          "default": ""
+          "description": "Set the paths you want to exclude",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
         }
       }
     }
